@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Polices Google : Orbitron pour le titre, Poppins pour le texte -->
+    <!-- Police Orbitron pour le titre et Poppins pour le texte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
             padding: 0;
         }
 
+        /* Alignement vertical et horizontal parfait au centre de l'écran */
         body {
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at center, #160a29 0%, #090314 100%);
@@ -33,7 +34,7 @@
             margin-bottom: 3.5rem;
         }
 
-        /* Titre futuriste */
+        /* Titre néon futuriste */
         h1 {
             font-family: 'Orbitron', sans-serif;
             font-size: 4.2rem;
@@ -44,22 +45,22 @@
             text-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.3);
         }
 
-        /* Grille des grands boutons */
+        /* Grille des boutons au centre */
         nav {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             width: 100%;
-            max-width: 1100px;
+            max-width: 1000px;
         }
 
         .btn {
             background-color: #354756;
             color: #ffffff;
-            padding: 3.5rem 2rem; /* Boutons considérablement agrandis */
+            padding: 3rem 2rem;
             text-decoration: none;
             border-radius: 16px;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 600;
             text-align: center;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
@@ -77,9 +78,8 @@
             transition: transform 0.3s ease;
         }
 
-        /* Résumé au survol plus grand et plus lisible */
         .btn-desc {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 400;
             color: #a7f3d0;
             max-height: 0;
@@ -95,17 +95,17 @@
             transform: translateY(-6px);
             box-shadow: 0 12px 30px rgba(168, 85, 247, 0.35);
             border-color: rgba(168, 85, 247, 0.6);
-            padding: 2.8rem 2rem;
+            padding: 2.5rem 2rem;
         }
 
         .btn:hover .btn-title {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
 
         .btn:hover .btn-desc {
             max-height: 60px;
             opacity: 1;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         @media (max-width: 900px) {
@@ -133,27 +133,27 @@
     <nav>
         <a href="#cv" class="btn">
             <span class="btn-title">CV</span>
-            <span class="btn-desc">Mon parcours académique et mes compétences</span>
+            <span class="btn-desc">Mon parcours et mes compétences</span>
         </a>
         <a href="#tab-synthese" class="btn">
             <span class="btn-title">Tab.Synthèse</span>
-            <span class="btn-desc">Tableau récapitulatif des réalisations BTS</span>
+            <span class="btn-desc">Tableau des réalisations BTS</span>
         </a>
         <a href="#vt-cybersecurite" class="btn">
             <span class="btn-title">V.T Cybersécurité</span>
-            <span class="btn-desc">Veille sur les menaces et la sécurité informatique</span>
+            <span class="btn-desc">Veille sur la sécurité informatique</span>
         </a>
         <a href="#vt-choisi" class="btn">
             <span class="btn-title">V.T Choisi</span>
-            <span class="btn-desc">Étude approfondie sur un sujet spécifique</span>
+            <span class="btn-desc">Sujet d'étude approfondi</span>
         </a>
         <a href="#stage1" class="btn">
             <span class="btn-title">Stage 1</span>
-            <span class="btn-desc">Missions et projets de première année</span>
+            <span class="btn-desc">Projets de première année</span>
         </a>
         <a href="#stage2" class="btn">
             <span class="btn-title">Stage 2</span>
-            <span class="btn-desc">Missions et réalisations de seconde année</span>
+            <span class="btn-desc">Missions de seconde année</span>
         </a>
     </nav>
 
