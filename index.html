@@ -4,21 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Google Fonts -->
+    <!-- Import de polices modernes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --primary-accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.35);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -26,188 +17,127 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f4ed; /* Fond crème doux */
+            color: #2d3748;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2rem 1rem;
-            position: relative;
-            overflow-x: hidden;
+            padding: 3rem 1.5rem;
         }
 
-        /* Effet d'arrière-plan lumineux */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2.5rem;
-        }
-
+        /* Style du titre principal */
         header {
             text-align: center;
+            margin-bottom: 2.5rem;
         }
 
         h1 {
-            font-size: 3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(to right, #ffffff, #a5b4fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            display: inline-block;
         }
 
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
+        /* Ligne décorative sous le titre */
+        h1::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 4px;
+            background: #3b5998;
+            margin: 8px auto 0;
+            border-radius: 2px;
         }
 
-        /* Grille des boutons */
+        /* Grille des boutons agrandis */
         nav {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 20px;
             width: 100%;
-            max-width: 750px;
+            max-width: 900px;
+            margin-bottom: 3rem;
         }
 
         .btn {
+            background-color: #3b5998; /* Bleu ardoise de ton image */
+            color: #ffffff;
+            padding: 2.2rem 1.5rem; /* Boutons beaucoup plus grands */
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-main);
-            padding: 1.1rem 1.5rem;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-            opacity: 0.8;
-            transition: transform 0.3s ease;
         }
 
         .btn:hover {
-            background: rgba(99, 102, 241, 0.15);
-            border-color: var(--primary-accent);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px var(--accent-glow);
-            color: #ffffff;
+            background-color: #2d4373;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
         }
 
-        .btn:hover svg {
-            transform: scale(1.15);
-            opacity: 1;
-        }
-
-        /* Carte de contenu principale */
+        /* Section de contenu */
         main {
+            background-color: #ffffff;
             width: 100%;
-            max-width: 750px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 16px;
-            padding: 3rem 2rem;
+            max-width: 900px;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         main h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
         }
 
         main p {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: #64748b;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             nav {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(1, 1fr);
             }
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Portfolio</h1>
-            <p class="subtitle">Bienvenue sur mon espace personnel</p>
-        </header>
+    <header>
+        <h1>Portfolio</h1>
+    </header>
 
-        <nav>
-            <a href="#cv" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                CV
-            </a>
-            <a href="#tab-synthese" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
-                Tab.Synthèse
-            </a>
-            <a href="#vt-cybersecurite" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8s0 0 0 0z"/></svg>
-                V.T Cybersécurité
-            </a>
-            <a href="#vt-choisi" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                V.T Choisi
-            </a>
-            <a href="#stage1" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-                Stage 1
-            </a>
-            <a href="#stage2" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-                Stage 2
-            </a>
-        </nav>
+    <nav>
+        <a href="#cv" class="btn">CV</a>
+        <a href="#tab-synthese" class="btn">Tab.Synthèse</a>
+        <a href="#vt-cybersecurite" class="btn">V.T Cybersécurité</a>
+        <a href="#vt-choisi" class="btn">V.T Choisi</a>
+        <a href="#stage1" class="btn">Stage 1</a>
+        <a href="#stage2" class="btn">Stage 2</a>
+    </nav>
 
-        <main>
-            <h2>Sélectionnez une section</h2>
-            <p>Explorez les rubriques ci-dessus pour consulter mes documents, ma veille technologique et mes comptes-rendus de stage.</p>
-        </main>
-    </div>
+    <main>
+        <h2>Bienvenue sur mon Portfolio</h2>
+        <p>Cliquez sur un bouton pour accéder au contenu.</p>
+    </main>
 
 </body>
 </html>
