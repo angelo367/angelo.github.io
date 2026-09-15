@@ -18,122 +18,108 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            /* Fond noir violet sombre */
             background: radial-gradient(circle at center, #160a29 0%, #090314 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 3rem 1.5rem;
+            justify-content: center;
+            padding: 2rem 1.5rem;
         }
 
         header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
         }
 
-        /* Nouveau titre dynamique & futuristic */
+        /* Titre futuriste */
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             color: #ffffff;
             text-transform: uppercase;
             text-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.3);
         }
 
-        /* Grille des boutons */
+        /* Grille des grands boutons */
         nav {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
             width: 100%;
-            max-width: 900px;
-            margin-bottom: 3rem;
+            max-width: 1100px;
         }
 
         .btn {
-            background-color: #354756; /* Style d'origine de ton visuel */
+            background-color: #354756;
             color: #ffffff;
-            padding: 2.2rem 1.5rem;
+            padding: 3.5rem 2rem; /* Boutons considérablement agrandis */
             text-decoration: none;
-            border-radius: 12px;
-            font-size: 1.3rem;
+            border-radius: 16px;
+            font-size: 1.6rem;
             font-weight: 600;
             text-align: center;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0px;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .btn-title {
             transition: transform 0.3s ease;
         }
 
-        /* Contenu secondaire masqué par défaut */
+        /* Résumé au survol plus grand et plus lisible */
         .btn-desc {
-            font-size: 0.8rem;
+            font-size: 1.05rem;
             font-weight: 400;
-            color: #a7f3d0; /* Vert menthe contrasté pour la lisibilité */
+            color: #a7f3d0;
             max-height: 0;
             opacity: 0;
             transition: all 0.3s ease;
             margin-top: 0;
+            line-height: 1.4;
         }
 
-        /* Effet au survol : grossissement + apparition du sous-texte */
+        /* Effet au survol */
         .btn:hover {
             background-color: #263542;
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
-            border: 1px solid rgba(168, 85, 247, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.35);
+            border-color: rgba(168, 85, 247, 0.6);
+            padding: 2.8rem 2rem;
         }
 
         .btn:hover .btn-title {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
         }
 
         .btn:hover .btn-desc {
-            max-height: 40px;
+            max-height: 60px;
             opacity: 1;
-            margin-top: 6px;
+            margin-top: 10px;
         }
 
-        /* Zone d'affichage */
-        main {
-            background-color: #ffffff;
-            color: #1e293b;
-            width: 100%;
-            max-width: 900px;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            text-align: center;
+        @media (max-width: 900px) {
+            nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        main h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        main p {
-            color: #64748b;
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             nav {
                 grid-template-columns: repeat(1, 1fr);
             }
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
         }
     </style>
@@ -147,34 +133,29 @@
     <nav>
         <a href="#cv" class="btn">
             <span class="btn-title">CV</span>
-            <span class="btn-desc">Mon parcours & compétences</span>
+            <span class="btn-desc">Mon parcours académique et mes compétences</span>
         </a>
         <a href="#tab-synthese" class="btn">
             <span class="btn-title">Tab.Synthèse</span>
-            <span class="btn-desc">Tableau de mes compétences BTS</span>
+            <span class="btn-desc">Tableau récapitulatif des réalisations BTS</span>
         </a>
         <a href="#vt-cybersecurite" class="btn">
             <span class="btn-title">V.T Cybersécurité</span>
-            <span class="btn-desc">Veille sur la sécurité informatique</span>
+            <span class="btn-desc">Veille sur les menaces et la sécurité informatique</span>
         </a>
         <a href="#vt-choisi" class="btn">
             <span class="btn-title">V.T Choisi</span>
-            <span class="btn-desc">Sujet approfondi spécifique</span>
+            <span class="btn-desc">Étude approfondie sur un sujet spécifique</span>
         </a>
         <a href="#stage1" class="btn">
             <span class="btn-title">Stage 1</span>
-            <span class="btn-desc">Rapport & travaux de 1ère année</span>
+            <span class="btn-desc">Missions et projets de première année</span>
         </a>
         <a href="#stage2" class="btn">
             <span class="btn-title">Stage 2</span>
-            <span class="btn-desc">Rapport & missions de 2ème année</span>
+            <span class="btn-desc">Missions et réalisations de seconde année</span>
         </a>
     </nav>
-
-    <main>
-        <h2>Bienvenue sur mon Portfolio</h2>
-        <p>Cliquez sur un bouton pour accéder au contenu.</p>
-    </main>
 
 </body>
 </html>
